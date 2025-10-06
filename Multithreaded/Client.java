@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client {
-    
+
     public Runnable getRunnable() throws UnknownHostException, IOException {
         return new Runnable() {
             @Override
@@ -31,14 +31,14 @@ public class Client {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                
+
             }
         };
     }
-    
+
     public static void main(String[] args){
         Client client = new Client();
-        for(int i=0; i<100; i++){
+        for(int i=0; i<1000; i++){
             try{
                 Thread thread = new Thread(client.getRunnable());
                 thread.start();
